@@ -1,24 +1,36 @@
 class arithmetic:
 
-    def __add__(self, x, y) :
-        return x + y
+    pass
 
-    def __sub__(self, x, y):
-        return x - y
+class add(arithmetic):
 
-    def __mul__(self, x, y):
-        return x * y
-
-    def __div__(self, x, y):
-        return x / y
-
-    def __pow__(self, x, y):
-        return x ** y
+    def evaluate(self, x):
+        return self + x
 
 
-operation = arithmetic()
-print(operation.__add__(3,4))
-print(operation.__sub__(6,1))
-print(operation.__mul__(24,7))
-print(operation.__div__(55,11))
-print(operation.__pow__(6,4))
+class subtract(arithmetic):
+
+    def evaluate(self, x):
+        return self - x
+
+
+class multiply(arithmetic):
+
+    def evaluate(self, x):
+        return self * x
+
+
+class divide(arithmetic):
+
+    def evaluate(self, x):
+        if x == 0 :
+            return "Error: division by zero"
+
+        else :
+            return self / x
+
+
+print(add.evaluate(4,5))
+print(subtract.evaluate(4,5))
+print(multiply.evaluate(4,5))
+print(divide.evaluate(4,5))
